@@ -1,0 +1,111 @@
+@use 'components/shared/styles/mixins' as *;
+
+.trading-bots {
+    &__file-input {
+        display: none;
+    }
+
+    &__filters {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+    }
+
+    &__search {
+        max-width: 32rem;
+
+        @include mobile-or-tablet-screen {
+            max-width: 100%;
+        }
+    }
+
+    &__categories {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+    }
+
+    &__grid {
+        display: grid;
+        gap: 1.2rem;
+        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.6rem;
+        background: var(--general-main-1);
+        border: 1px solid var(--border-normal);
+        border-radius: 1.2rem;
+        transition:
+            transform 0.16s ease,
+            border-color 0.16s ease,
+            box-shadow 0.16s ease;
+
+        &:hover {
+            transform: translateY(-0.2rem);
+            border-color: var(--brand-primary);
+            box-shadow: 0 0.6rem 1.8rem var(--shadow-drop);
+        }
+    }
+
+    &__card-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.8rem;
+    }
+
+    &__card-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 1.3;
+        color: var(--text-prominent);
+        margin: 0;
+    }
+
+    &__card-text {
+        flex: 1;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        color: var(--text-less-prominent);
+        margin: 0;
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__tag {
+        padding: 0.3rem 0.8rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-less-prominent);
+        background: var(--general-section-1);
+        border-radius: 0.6rem;
+    }
+
+    &__card-actions {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+
+        .tp-button {
+            flex: 1 1 14rem;
+        }
+    }
+
+    &__byob {
+        margin-top: 0.4rem;
+    }
+}

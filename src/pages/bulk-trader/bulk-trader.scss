@@ -1,0 +1,52 @@
+@use 'components/shared/styles/mixins' as *;
+
+.bulk-trader {
+    &__duration {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 0.8rem;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        padding-top: 0.4rem;
+    }
+
+    &__confirm {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding: 1.2rem;
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: var(--text-general);
+        background: var(--transparent-danger);
+        border-radius: 0.8rem;
+        cursor: pointer;
+
+        input {
+            margin-top: 0.2rem;
+            width: 1.6rem;
+            height: 1.6rem;
+            accent-color: var(--brand-danger);
+            cursor: pointer;
+        }
+    }
+
+    &__stats {
+        display: grid;
+        gap: 0.8rem;
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    }
+
+    &__row-error {
+        margin-top: 0.4rem;
+        font-size: 1.1rem;
+        line-height: 1.4;
+        color: var(--text-loss-danger);
+        white-space: normal;
+        max-width: 32rem;
+    }
+}

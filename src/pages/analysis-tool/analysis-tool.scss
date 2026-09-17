@@ -1,0 +1,196 @@
+@use 'components/shared/styles/mixins' as *;
+
+.analysis-tool {
+    &__tiles {
+        display: grid;
+        gap: 0.8rem;
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    }
+
+    &__digit-tile {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 1.2rem;
+        background: var(--general-section-1);
+        border-radius: 0.8rem;
+    }
+
+    &__digit-tile-value {
+        font-size: 3.2rem;
+        font-weight: 700;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+        color: var(--text-prominent);
+
+        &--even {
+            color: var(--brand-success);
+        }
+
+        &--odd {
+            color: var(--brand-danger);
+        }
+    }
+
+    &__chart {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        align-items: end;
+        gap: 0.6rem;
+        height: 22rem;
+
+        &--loading {
+            align-items: stretch;
+        }
+    }
+
+    &__chart-skeleton {
+        height: 100%;
+    }
+
+    &__bar-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+        height: 100%;
+    }
+
+    &__bar-value {
+        font-size: 1.1rem;
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+        color: var(--text-less-prominent);
+    }
+
+    &__bar-track {
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        flex: 1;
+        min-height: 0;
+        background: var(--general-section-1);
+        border-radius: 0.6rem;
+        overflow: hidden;
+    }
+
+    &__bar {
+        width: 100%;
+        min-height: 0.2rem;
+        background: color-mix(in srgb, var(--brand-primary) 45%, transparent);
+        border-radius: 0.6rem 0.6rem 0 0;
+        transition: height 0.25s ease;
+
+        &--highest {
+            background: color-mix(in srgb, var(--brand-primary) 75%, transparent);
+        }
+
+        &--current {
+            background: var(--brand-primary);
+        }
+    }
+
+    &__bar-label {
+        font-size: 1.3rem;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        color: var(--text-less-prominent);
+
+        &--current {
+            color: var(--brand-primary);
+        }
+    }
+
+    &__splits {
+        display: grid;
+        gap: 1.2rem;
+        grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    }
+
+    &__meter {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    &__meter-label {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--text-prominent);
+    }
+
+    &__meter-bar {
+        display: flex;
+        height: 1.2rem;
+        border-radius: 999px;
+        overflow: hidden;
+        background: var(--general-section-1);
+    }
+
+    &__meter-fill {
+        transition: width 0.25s ease;
+
+        &--up {
+            background: var(--brand-success);
+        }
+
+        &--down {
+            background: var(--brand-danger);
+        }
+    }
+
+    &__meter-legend {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.8rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+    }
+
+    &__meter-side {
+        &--up {
+            color: var(--text-profit-success);
+        }
+
+        &--down {
+            color: var(--text-loss-danger);
+        }
+    }
+
+    &__digits {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__digit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.4rem;
+        height: 3.4rem;
+        font-size: 1.4rem;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        border-radius: 0.8rem;
+        background: var(--general-section-1);
+        color: var(--text-general);
+
+        &--even {
+            color: var(--text-profit-success);
+        }
+
+        &--odd {
+            color: var(--text-loss-danger);
+        }
+
+        &--last {
+            outline: 0.2rem solid var(--brand-primary);
+            outline-offset: 0.1rem;
+        }
+    }
+}
